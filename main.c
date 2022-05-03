@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:12:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/04/26 19:45:17 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/03 16:19:01 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ int	main(int argc, char **argv)
 	char			**tab;
 	long long int	*res;
 
+	printf("\nOKOK\n");
 	arg = ft_strjoin(argc, argv, " ");
+	printf("%s\n", arg);
+	printf("\nOKOK\n");
 	tab = ft_split(arg, ' ');
+	printf("\nOKOK\n");
 	free(arg);
 	if (ft_is_number(tab) == 0)
 	{
@@ -28,11 +32,12 @@ int	main(int argc, char **argv)
 		ft_putstr("Error");
 		return (0);
 	}
+	printf("\nOKOK\n");
 	res = malloc(sizeof(int) * ft_size(tab));
 	if (!res)
 		return (0);
 	i = 0;
-	while (i <= ft_size(tab))
+	while (i < ft_size(tab))
 	{
 		res[i] = ft_atoi(tab[i]);
 		i++;

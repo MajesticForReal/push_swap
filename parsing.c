@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:59:06 by anrechai          #+#    #+#             */
-/*   Updated: 2022/04/26 19:45:53 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/03 15:44:55 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_is_integer(long long int *tab, int size)
 	int	i;
 
 	i = 0;
-	while (i <= size)
+	while (i < size)
 	{
 		if (tab[i] < -2147483648 || tab[i] > 2147483647)
 			return (0);
@@ -52,10 +52,10 @@ int	ft_is_duplicate(long long int *tab, int size)
 	int	j;
 
 	i = 0;
-	while (i <= size)
+	while (i < size)
 	{
 		j = 1;
-		while (j <= size)
+		while (j < size)
 		{
 			if (tab[i] == tab[j])
 				return (0);
