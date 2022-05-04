@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 18:27:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/04/26 18:27:33 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/04 17:56:38 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	k = 0;
 	while (i < ft_count_words(s, c))
 	{
-		tab[i] = malloc(ft_str_len(s + k, c) + 1);
+		tab[i] = malloc(sizeof(char) * (ft_str_len(s + k, c) + 1));
 		if (!tab[i])
 			return (str_del(tab, i));
 		tab[i] = fill_tab(tab[i], s, c, &k);

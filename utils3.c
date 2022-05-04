@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:10:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/04 15:12:53 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/04 18:03:13 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ void	ft_free(char **tab)
 	while (tab[i])
 	{
 		free(tab[i]);
+		tab[i] = NULL;
 		i++;
 	}
+	free(tab);
+	tab = NULL;
 	return ;
 }
