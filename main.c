@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:12:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/03 16:19:01 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/04 17:30:44 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,9 @@ int	main(int argc, char **argv)
 	char			**tab;
 	long long int	*res;
 
-	printf("\nOKOK\n");
+
 	arg = ft_strjoin(argc, argv, " ");
-	printf("%s\n", arg);
-	printf("\nOKOK\n");
 	tab = ft_split(arg, ' ');
-	printf("\nOKOK\n");
 	free(arg);
 	if (ft_is_number(tab) == 0)
 	{
@@ -32,8 +29,7 @@ int	main(int argc, char **argv)
 		ft_putstr("Error");
 		return (0);
 	}
-	printf("\nOKOK\n");
-	res = malloc(sizeof(int) * ft_size(tab));
+	res = malloc(sizeof(long long int) * ft_size(tab));
 	if (!res)
 		return (0);
 	i = 0;
@@ -42,17 +38,18 @@ int	main(int argc, char **argv)
 		res[i] = ft_atoi(tab[i]);
 		i++;
 	}
-	i = ft_size(tab);
-	if (ft_is_integer(res, i) == 0
-		|| ft_is_duplicate(res, i) == 0)
+	i = ft_size(tab) - 1;
+	if (ft_is_duplicate(res, i) == 0
+		|| ft_is_integer(res, i) == 0)
 	{
 		ft_free(tab);
 		free(res);
 		ft_putstr("Error");
 		return (0);
 	}
+	//ALGOOOOOOOOOOOOOOOO//
 	ft_free(tab);
-	printf("\nOKOK\n");
 	free(res);
+	printf("CA ROULE\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 18:24:14 by anrechai          #+#    #+#             */
-/*   Updated: 2022/04/26 19:43:15 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/03 19:49:20 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	dest = malloc((j + 1) * sizeof(char));
 	if (!dest)
 		return (0);
-	i = 0;
+	i = 1;
 	j = 0;
 	while (i < size)
 	{
@@ -79,11 +79,11 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (dest);
 }
 
-int	ft_atoi(const char *tab)
+long long int	ft_atoi(char *tab)
 {
-	int	i;
-	int	sign;
-	int	res;
+	long long int	i;
+	long long int	sign;
+	long long int	res;
 
 	i = 0;
 	sign = 1;

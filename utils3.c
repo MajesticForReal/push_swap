@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:10:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/04/26 19:37:06 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/04 15:12:53 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 int	ft_size(char **tab)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	j = 0;
-	while (tab[i][j])
+	while (tab[i])
 		i++;
 	return (i);
 }
