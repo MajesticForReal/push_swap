@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:12:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/04 20:40:37 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/05 22:21:57 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int	main(int argc, char **argv)
 	char			**tab;
 	long long int	*res;
 
+	if (ft_check_only_space(argc, argv) == 0 || ft_check_argv(argc, argv) == 0)
+		return (0);
 	arg = ft_strjoin(argc, argv, " ");
 	tab = ft_split(arg, ' ');
 	free(arg);

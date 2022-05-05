@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:57:03 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/04 17:34:31 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/05 22:05:40 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-
+int				ft_check_only_space(int argc, char **argv);
+int				ft_check_argv(int argc, char **argv);
 int				ft_is_number(char **tab);
 int				ft_is_integer(long long int *res, int i);
 int				ft_is_duplicate(long long int *res, int i);
