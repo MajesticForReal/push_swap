@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:57:01 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/17 21:30:00 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/17 23:44:44 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,24 @@ t_first	*ft_fill_stack(long long int *res, t_first *a, int size)
 		i++;
 	}
 	return (a);
+}
+
+void	ft_pa(t_first *a, t_first *b)
+{
+	if (b->first_stack == NULL)
+		return ;
+	add_front_a_from_b(a, b);
+	del_front(b);
+	ft_putstr("pa\n");
+	return ;
+}
+
+void	add_front_a_from_b(t_first *a, t_first *b)
+{
+	t_stack	*new;
+
+	new = ft_initialize_struct();
+	new->nb = b->first_stack->nb;
+	new->next = a->first_stack;
+	a->first_stack = new;
 }

@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 19:18:58 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/17 21:06:39 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/17 23:59:28 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_first	*ft_initialize_first(void)
 	return (new);
 }
 
-void	add_front_b(t_first *a, t_first *b)
+void	add_front_b_from_a(t_first *a, t_first *b)
 {
 	t_stack	*new;
 

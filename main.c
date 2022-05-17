@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:12:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/17 21:31:31 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/18 00:18:01 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,13 +102,35 @@ int	main(int argc, char **argv)
 	res = ft_fill_tab(res, tab);
 	a = ft_fill_stack(res, a, ft_size(tab));
 	ft_pb(a, b);
+	ft_pa(a, b);
+	ft_pb(a, b);
+	ft_pa(a, b);
+	ft_pb(a, b);
+	ft_ra(a);
+	ft_rb(b);
+	ft_rra(a);
+	ft_rrb(b);
+	ft_sa(a);
+	ft_pb(a, b);
+	ft_sb(b);
+	ft_pb(a, b);
+	ft_rra(a);
 	ft_pb(a, b);
 	ft_pb(a, b);
-	ft_pb(a, b);
-	ft_pb(a, b);
-	ft_pb(a, b);
+	ft_ra(a);
+	ft_rra(a);
+	ft_sa(a);
+	ft_pa(a, b);
+	ft_sa(a);
+	ft_pa(a, b);
+	ft_sa(a);
+	ft_pa(a, b);
+	ft_pa(a, b);
+	ft_pa(a, b);
 	display(a->first_stack, b->first_stack);
-	//display_b(b->first_stack);
+	ft_free_stack(a);
+	free(a);
+	free(b);
 	ft_free(tab);
 	free(res);
 	printf("\nFINI\n");
