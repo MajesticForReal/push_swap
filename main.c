@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:12:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/05 22:21:57 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/17 21:31:31 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	ft_checker(char **tab, long long int *res, int index, int i)
 		if (ft_is_number(tab) == 0)
 		{
 			ft_free(tab);
+			free(res);
 			ft_putstr("Error\n");
 			return (0);
 		}
@@ -40,8 +41,13 @@ int	ft_checker(char **tab, long long int *res, int index, int i)
 	return (1);
 }
 
-long long int	*ft_fill_tab(long long *res, char **tab, int i)
+long long int	*ft_fill_tab(long long *res, char **tab)
 {
+	int	i;
+
+	res = malloc(sizeof(long long int) * ft_size(tab));
+	if (!res)
+		return (0);
 	i = 0;
 	while (i < ft_size(tab))
 	{
@@ -65,10 +71,7 @@ int	ft_is_already_sort(long long *res, char **tab)
 		while (j < size)
 		{
 			if (res[i] > res[j])
-			{
-				printf("C BON A TRIE\n");
 				return (1);
-			}
 			j++;
 		}
 		i++;
@@ -80,31 +83,34 @@ int	ft_is_already_sort(long long *res, char **tab)
 
 int	main(int argc, char **argv)
 {
-	int				i;
 	char			*arg;
 	char			**tab;
 	long long int	*res;
+	t_first			*a;
+	t_first			*b;
 
+	a = ft_initialize_first();
+	b = ft_initialize_first();
 	if (ft_check_only_space(argc, argv) == 0 || ft_check_argv(argc, argv) == 0)
 		return (0);
 	arg = ft_strjoin(argc, argv, " ");
 	tab = ft_split(arg, ' ');
 	free(arg);
 	res = NULL;
-	i = 0;
-	if (ft_checker(tab, res, 1, i) == 0)
+	if (ft_parsing(tab, res, 0, 0) == 0)
 		return (0);
-	res = malloc(sizeof(long long int) * ft_size(tab));
-	if (!res)
-		return (0);
-	res = ft_fill_tab(res, tab, i);
-	if (ft_checker(tab, res, 2, i) == 0)
-		return (0);
-	if (ft_is_already_sort(res, tab) == 0)
-		return (0);
-	//ALGOOOOOOOOOOOOOOOO//
+	res = ft_fill_tab(res, tab);
+	a = ft_fill_stack(res, a, ft_size(tab));
+	ft_pb(a, b);
+	ft_pb(a, b);
+	ft_pb(a, b);
+	ft_pb(a, b);
+	ft_pb(a, b);
+	ft_pb(a, b);
+	display(a->first_stack, b->first_stack);
+	//display_b(b->first_stack);
 	ft_free(tab);
 	free(res);
-	printf("CA ROULE\n");
+	printf("\nFINI\n");
 	return (0);
 }

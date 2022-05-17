@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:10:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/05 22:10:51 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/17 19:36:14 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,33 @@ int	ft_check_only_space(int argc, char **argv)
 		j = 0;
 		k = 0;
 	}
+	return (1);
+}
+
+
+int	ft_parsing(char **tab, long long int *res, int i, int j)
+{
+	i = 0;
+	j = 0;
+	while (i < ft_size(tab))
+	{
+		if ((tab[i][j] == '-' || tab[i][j] == '+') && tab[i][j + 1] == '\0')
+		{
+			ft_free(tab);
+			free(res);
+			ft_putstr("Error\n");
+			return (0);
+		}
+		i++;
+	}
+	i = 0;
+	if (ft_checker(tab, res, 1, i) == 0)
+		return (0);
+	res = ft_fill_tab(res, tab);
+	if (ft_checker(tab, res, 2, i) == 0)
+		return (0);
+	if (ft_is_already_sort(res, tab) == 0)
+		return (0);
+	free(res);
 	return (1);
 }

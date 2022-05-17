@@ -6,11 +6,11 @@
 #    By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/20 16:55:44 by anrechai          #+#    #+#              #
-#    Updated: 2022/05/04 18:03:23 by anrechai         ###   ########.fr        #
+#    Updated: 2022/05/12 19:31:28 by anrechai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	parsing.c utils.c utils2.c utils3.c main.c
+SRCS		=	parsing.c utils.c utils2.c utils3.c main.c ft_moove.c ft_moove_2.c ft_moove_3.c
 
 OBJS		=	${SRCS:.c=.o}
 
