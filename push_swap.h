@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:57:03 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/18 00:15:25 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:24:43 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int				ft_strlen(char *str);
 int				ft_parsing(char **tab, long long int *res, int i, int j);
 int				ft_is_already_sort(long long *res, char **tab);
 int				ft_checker(char **tab, long long int *res, int index, int i);
+int				*ft_sort_tab(long long int *res, int *sortint, int size);
 
 void			ft_free_stack(t_first *a);
 void			ft_sb(t_first *b);
@@ -63,6 +64,8 @@ void			add_front_b_from_a(t_first *a, t_first *b);
 void			del_front(t_first *ab);
 void			add_front_a_from_b(t_first *a, t_first *b);
 void			ft_pa(t_first *a, t_first *b);
+void			ft_choice(int size, t_first *a, int *sortint);
+void			ft_sort_100(t_first *a, t_first *b, int *sortint, int size);
 
 char			*ft_strjoin(int size, char **strs, char *sep);
 char			**ft_split(char const *s, char c);

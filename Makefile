@@ -6,7 +6,7 @@
 #    By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/20 16:55:44 by anrechai          #+#    #+#              #
-#    Updated: 2022/05/12 19:31:28 by anrechai         ###   ########.fr        #
+#    Updated: 2022/05/19 19:00:09 by anrechai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME		=	push_swap
 
 CFLAGS		=	-Wall -Wextra -Werror
 
-CC			=	gcc
+CC			=	cc
 
 HEADER		=	push_swap.h
 
