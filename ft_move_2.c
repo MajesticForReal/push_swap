@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moove_2.c                                       :+:      :+:    :+:   */
+/*   ft_moove_3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/05 17:57:05 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/18 00:25:07 by anrechai         ###   ########.fr       */
+/*   Created: 2022/05/12 19:18:58 by anrechai          #+#    #+#             */
+/*   Updated: 2022/05/17 23:59:28 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,35 +49,6 @@ void	ft_rra(t_first *a)
 	ft_putstr("rra\n");
 }
 
-void	add_front(t_first *ab)
-{
-	t_stack	*tmp;
-	t_stack	*new_first;
-
-	tmp = ab->first_stack;
-	while (tmp->next != NULL)
-	{
-		tmp = tmp->next;
-	}
-	new_first = ft_initialize_struct();
-	new_first->nb = tmp->nb;
-	new_first->next = ab->first_stack;
-	ab->first_stack = new_first;
-}
-
-void	del_back(t_first *ab)
-{
-	t_stack	*tmp;
-
-	tmp = ab->first_stack;
-	while (tmp->next->next != NULL)
-	{
-		tmp = tmp->next;
-	}
-	free(tmp->next);
-	tmp->next = NULL;
-}
-
 void	ft_rrb(t_first *b)
 {
 	if (b->first_stack == NULL || b->first_stack->next == NULL)
@@ -85,42 +56,4 @@ void	ft_rrb(t_first *b)
 	add_front(b);
 	del_back(b);
 	ft_putstr("rrb\n");
-}
-
-void	ft_sa(t_first *a)
-{
-	int	tmp;
-
-	if (a->first_stack == NULL || a->first_stack->next == NULL)
-		return ;
-	tmp = a->first_stack->nb;
-	a->first_stack->nb = a->first_stack->next->nb;
-	a->first_stack->next->nb = tmp;
-	ft_putstr("sa\n");
-}
-
-void	ft_sb(t_first *b)
-{
-	int	tmp;
-
-	if (b->first_stack == NULL || b->first_stack->next == NULL)
-		return ;
-	tmp = b->first_stack->nb;
-	b->first_stack->nb = b->first_stack->next->nb;
-	b->first_stack->next->nb = tmp;
-	ft_putstr("sb\n");
-}
-
-void	ft_free_stack(t_first *a)
-{
-	t_stack	*tmp;
-
-	tmp = a->first_stack;
-	while (tmp->next != NULL)
-	{
-		tmp = a->first_stack->next;
-		free(a->first_stack);
-		a->first_stack = tmp;
-	}
-	free(a->first_stack);
 }

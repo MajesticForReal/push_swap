@@ -22,22 +22,6 @@ int	ft_size(char **tab)
 	return (i);
 }
 
-void	ft_free(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		tab[i] = NULL;
-		i++;
-	}
-	free(tab);
-	tab = NULL;
-	return ;
-}
-
 int	ft_check_argv(int argc, char **argv)
 {
 	int	i;

@@ -69,3 +69,56 @@ int	ft_is_duplicate(long long int *tab, int size)
 	}
 	return (1);
 }
+
+int	ft_is_already_sort(long long *res, char **tab)
+{
+	int	size;
+	int	i;
+	int	j;
+
+	size = ft_size(tab);
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (res[i] > res[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	ft_free(tab);
+	free(res);
+	return (0);
+}
+
+int	ft_checker(char **tab, long long int *res, int index, int i)
+{
+	if (index == 1)
+	{
+		if (ft_is_number(tab) == 0)
+		{
+			ft_free(tab);
+			free(res);
+			ft_putstr("Error\n");
+			return (0);
+		}
+		return (1);
+	}
+	else if (index == 2)
+	{
+		i = ft_size(tab) - 1;
+		if (ft_is_duplicate(res, i) == 0
+			|| ft_is_integer(res, i) == 0)
+		{
+			ft_free(tab);
+			free(res);
+			ft_putstr("Error\n");
+			return (0);
+		}
+		return (1);
+	}
+	return (1);
+}
