@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_moove.c                                         :+:      :+:    :+:   */
+/*   ft_algo.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 17:57:01 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/20 18:21:21 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/24 20:59:23 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,23 +51,54 @@ void	ft_choice(int size, t_first *a, int *sortint)
 		// ft_sort_4(a, b, sortint);
 	// else if (size == 5)
 		// ft_sort_5(a, b, sortint);
-	else if (size >= 6 && size <= 100)
-		ft_sort_100(a, b, sortint, size);
-	// else if (size > 100)
-		// ft_sort_500(a, b, sortint);
+	// else if (size >= 6 && size <= 100)
+		// ft_sort_100(a, b, sortint, size);
+	 else if (size > 5)
+		ft_sort_500(a, b, sortint, size);
 	free(b);
 }
 
 void	ft_sort_100(t_first *a, t_first *b, int *sortint, int size)
 {
-	ft_pb_first(a, b, sortint, size);
-	ft_sort_first(a, b, sortint, size);
-	ft_pb_mid(a, b, sortint, size);
-	ft_sort_mid(a, b, sortint, size);
-	ft_pb_last(a, b, sortint, size);
-	ft_sort_last(a, b, sortint, size);
-	ft_pb_rest(a, b, sortint, size);
-	ft_sort_rest(a, b, sortint, size);
+	ft_pb_first_100(a, b, sortint, size);
+	ft_sort_first_100(a, b, sortint, size);
+	ft_pb_mid_100(a, b, sortint, size);
+	ft_sort_mid_100(a, b, sortint, size);
+	ft_pb_last_100(a, b, sortint, size);
+	ft_sort_last_100(a, b, sortint, size);
+	ft_pb_rest_100(a, b, sortint, size);
+	ft_sort_rest_100(a, b, sortint, size);
+}
+
+void	ft_sort_500(t_first *a, t_first *b, int *sortint, int size)
+{
+	ft_pb_1_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_sort_1_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_pb_2_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_sort_2_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_pb_3_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_sort_3_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_pb_4_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_sort_4_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_pb_5_500(a, b, sortint, size);
+	ft_sort_5_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_pb_6_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_sort_6_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_pb_rest_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
+	ft_sort_rest_500(a, b, sortint, size);
+	// display(a->first_stack, b->first_stack);
 }
 
 // void	ft_sort_2(t_first *a, int *sortint)

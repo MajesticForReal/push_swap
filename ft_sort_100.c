@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_100.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 19:42:19 by anrechai          #+#    #+#             */
+/*   Updated: 2022/05/24 19:42:19 by anrechai         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	ft_sort_first(t_first *a, t_first *b, int *sortint, int size)
+void	ft_sort_first_100(t_first *a, t_first *b, int *sortint, int size)
 {
 	int	tier;
 	int	max;
@@ -29,7 +41,7 @@ void	ft_sort_first(t_first *a, t_first *b, int *sortint, int size)
 	}
 }
 
-void	ft_sort_mid(t_first *a, t_first *b, int *sortint, int size)
+void	ft_sort_mid_100(t_first *a, t_first *b, int *sortint, int size)
 {
 	int	tier;
 	int	max;
@@ -59,7 +71,7 @@ void	ft_sort_mid(t_first *a, t_first *b, int *sortint, int size)
 	}
 }
 
-void	ft_sort_last(t_first *a, t_first *b, int *sortint, int size)
+void	ft_sort_last_100(t_first *a, t_first *b, int *sortint, int size)
 {
 	int	tier;
 	int	max;
@@ -90,7 +102,7 @@ void	ft_sort_last(t_first *a, t_first *b, int *sortint, int size)
 	ft_min_to_top(a, sortint[size - ((size / 3) * 3)]);
 }
 
-void	ft_sort_rest(t_first *a, t_first *b, int *sortint, int size)
+void	ft_sort_rest_100(t_first *a, t_first *b, int *sortint, int size)
 {
 	int	max;
 	int	tier;

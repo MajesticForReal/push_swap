@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_pb.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/24 19:42:56 by anrechai          #+#    #+#             */
+/*   Updated: 2022/05/24 19:42:56 by anrechai         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	ft_pb_first(t_first *a, t_first *b, int	*sortint, int size)
+void	ft_pb_first_100(t_first *a, t_first *b, int	*sortint, int size)
 {
 	int	tier;
 	int	i;
@@ -19,7 +31,7 @@ void	ft_pb_first(t_first *a, t_first *b, int	*sortint, int size)
 	}
 }
 
-void	ft_pb_mid(t_first *a, t_first *b, int	*sortint, int size)
+void	ft_pb_mid_100(t_first *a, t_first *b, int	*sortint, int size)
 {
 	int	tier;
 	int	i;
@@ -40,7 +52,7 @@ void	ft_pb_mid(t_first *a, t_first *b, int	*sortint, int size)
 	}
 }
 
-void	ft_pb_last(t_first *a, t_first *b, int	*sortint, int size)
+void	ft_pb_last_100(t_first *a, t_first *b, int	*sortint, int size)
 {
 	int	tier;
 	int	i;
@@ -61,7 +73,7 @@ void	ft_pb_last(t_first *a, t_first *b, int	*sortint, int size)
 	}
 }
 
-void	ft_pb_rest(t_first *a, t_first *b, int	*sortint, int size)
+void	ft_pb_rest_100(t_first *a, t_first *b, int	*sortint, int size)
 {
 	int	tier;
 	int	rest;
