@@ -40,5 +40,11 @@ void	add_front_a_from_b(t_first *a, t_first *b)
 void	ft_min_to_top(t_first *a, int min)
 {
 	while (min != a->first_stack->nb)
+		ft_ra(a);
+}
+
+void	ft_min_to_top_rra(t_first *a, int min)
+{
+	while (min != a->first_stack->nb)
 		ft_rra(a);
 }
