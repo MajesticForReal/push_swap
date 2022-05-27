@@ -41,3 +41,24 @@ void	ft_free(char **tab)
 	tab = NULL;
 	return ;
 }
+
+void	ft_free_main(t_first *a, char **tab, long long int *res, int *sortint)
+{
+	ft_free_stack(a);
+	free(a);
+	ft_free(tab);
+	free(res);
+	free(sortint);
+}
+
+void	ft_putstr_error(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(2, &str[i], 1);
+		i++;
+	}
+}

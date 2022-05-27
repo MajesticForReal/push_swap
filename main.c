@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:12:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/24 20:36:27 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/27 23:56:57 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,6 @@ int	main(int argc, char **argv)
 	sortint = ft_sort_tab(res, sortint, ft_size(tab));
 	a = ft_fill_stack(res, a, ft_size(tab));
 	ft_choice(ft_size(tab), a, sortint);
-	ft_free_stack(a);
-	free(a);
-	ft_free(tab);
-	free(res);
-	free(sortint);
+	ft_free_main(a, tab, res, sortint);
 	return (0);
 }

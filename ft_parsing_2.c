@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:59:06 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/24 19:43:03 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/28 00:42:21 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int	ft_checker(char **tab, long long int *res, int index, int i)
 		{
 			ft_free(tab);
 			free(res);
-			ft_putstr("Error\n");
+			ft_putstr_error("Error\n");
 			return (0);
 		}
 		return (1);
@@ -115,7 +115,7 @@ int	ft_checker(char **tab, long long int *res, int index, int i)
 		{
 			ft_free(tab);
 			free(res);
-			ft_putstr("Error\n");
+			ft_putstr_error("Error\n");
 			return (0);
 		}
 		return (1);

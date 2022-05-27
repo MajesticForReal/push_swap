@@ -14,27 +14,21 @@
 
 void	ft_sort_first_100(t_first *a, t_first *b, int *sortint, int size)
 {
-	int	tier;
 	int	max;
 	int	min;
-	int	size_opti;
+	int	tier;
 
 	tier = size / 3;
 	max = size - 1;
 	min = size - tier;
-	size_opti = (size / 3);
 	while (tier != 0)
 	{
-		if (ft_opti_sort(b, sortint[max], sortint[min], size_opti) == 1)
-			ft_rrb(b);
-		else if (ft_opti_sort(b, sortint[max], sortint[min], size_opti) == 2)
-			ft_rb(b);
+		ft_norme_opti(b, sortint[max], sortint[min], tier);
 		if (b->first_stack->nb == sortint[max])
 		{
 			ft_pa(a, b);
 			max--;
 			tier--;
-			size_opti--;
 		}
 		else if (b->first_stack->nb == sortint[min])
 		{
@@ -42,66 +36,28 @@ void	ft_sort_first_100(t_first *a, t_first *b, int *sortint, int size)
 			ft_ra(a);
 			tier--;
 			min++;
-			size_opti--;
 		}
 	}
 }
-
-		// if (b->first_stack->nb == sortint[max])
-		// {
-		// 	ft_pa(a, b);
-		// 	max--;
-		// 	tier--;
-		// }
-		// else if (b->first_stack->nb == sortint[min])
-		// {
-		// 	ft_pa(a, b);
-		// 	ft_ra(a);
-		// 	tier--;
-		// 	min++;
-		// }
-
-// if (b->first_stack->nb == sortint[max]
-// 			|| b->first_stack->nb == sortint[min])
-// 		{
-// 			if (b->first_stack->nb == sortint[max])
-// 			{
-// 				ft_pa(a, b);
-// 				max--;
-// 			}
-// 			if (b->first_stack->nb == sortint[min])
-// 			{
-// 				ft_pa(a, b);
-// 				ft_ra(a, b);
-// 				min++;
-// 			}
-// 			tier--;
-// 		}
 
 void	ft_sort_mid_100(t_first *a, t_first *b, int *sortint, int size)
 {
 	int	tier;
 	int	max;
 	int	min;
-	int	size_opti;
 
 	tier = size / 3;
 	max = (size - tier) - 1;
 	min = size - (tier * 2);
-	size_opti = (size / 3);
 	ft_min_to_top(a, sortint[size - tier]);
 	while (tier != 0)
 	{
-		if (ft_opti_sort(b, sortint[max], sortint[min], size_opti) == 1)
-			ft_rrb(b);
-		else if (ft_opti_sort(b, sortint[max], sortint[min], size_opti) == 2)
-			ft_rb(b);
+		ft_norme_opti(b, sortint[max], sortint[min], tier);
 		if (b->first_stack->nb == sortint[max])
 		{
 			ft_pa(a, b);
 			max--;
 			tier--;
-			size_opti--;
 		}
 		else if (b->first_stack->nb == sortint[min])
 		{
@@ -109,7 +65,6 @@ void	ft_sort_mid_100(t_first *a, t_first *b, int *sortint, int size)
 			ft_ra(a);
 			tier--;
 			min++;
-			size_opti--;
 		}
 	}
 }
@@ -119,25 +74,19 @@ void	ft_sort_last_100(t_first *a, t_first *b, int *sortint, int size)
 	int	tier;
 	int	max;
 	int	min;
-	int	size_opti;
 
 	tier = size / 3;
 	max = size - (tier * 2) - 1;
 	min = size - (tier * 3);
-	size_opti = (size / 3);
 	ft_min_to_top(a, sortint[size - (tier * 2)]);
 	while (tier != 0)
 	{
-		if (ft_opti_sort(b, sortint[max], sortint[min], size_opti) == 1)
-			ft_rrb(b);
-		else if (ft_opti_sort(b, sortint[max], sortint[min], size_opti) == 2)
-			ft_rb(b);
+		ft_norme_opti(b, sortint[max], sortint[min], tier);
 		if (b->first_stack->nb == sortint[max])
 		{
 			ft_pa(a, b);
 			max--;
 			tier--;
-			size_opti--;
 		}
 		else if (b->first_stack->nb == sortint[min])
 		{
@@ -145,10 +94,8 @@ void	ft_sort_last_100(t_first *a, t_first *b, int *sortint, int size)
 			ft_ra(a);
 			tier--;
 			min++;
-			size_opti--;
 		}
 	}
-	ft_min_to_top_rra(a, sortint[size - ((size / 3) * 3)]);
 }
 
 void	ft_sort_rest_100(t_first *a, t_first *b, int *sortint, int size)
@@ -178,12 +125,9 @@ int	*ft_sort_tab(long long int *res, int *sortint, int size)
 	int	j;
 	int	tmp;
 
-	i = 0;
-	while (i < size)
-	{
+	i = -1;
+	while (++i < size)
 		sortint[i] = res[i];
-		i++;
-	}
 	i = 0;
 	while (i < size)
 	{

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pb.c                                            :+:      :+:    :+:   */
+/*   ft_pb_100.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 19:42:56 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/24 19:42:56 by anrechai         ###   ########.fr       */
+/*   Created: 2022/05/27 23:35:28 by anrechai          #+#    #+#             */
+/*   Updated: 2022/05/27 23:35:28 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,10 @@ void	ft_pb_first_100(t_first *a, t_first *b, int	*sortint, int size)
 	i = 0;
 	while (i < (size / 3))
 	{
-		// if (ft_opti_pb(a, sortint[max], sortint[min], size) == 1)
-		// 	ft_rra(a);
-		// else if (ft_opti_pb(a, sortint[max], sortint[min], size) == 2)
-		// 	ft_ra(a);
-		if (a->first_stack->nb > sortint[max] || a->first_stack->nb < sortint[min])
+		if (a->first_stack->nb > sortint[max]
+			|| a->first_stack->nb < sortint[min])
 			ft_ra(a);
-		if (a->first_stack->nb <= sortint[max]
+		else if (a->first_stack->nb <= sortint[max]
 			&& a->first_stack->nb >= sortint[min])
 		{
 			ft_pb(a, b);
@@ -49,13 +46,10 @@ void	ft_pb_mid_100(t_first *a, t_first *b, int *sortint, int size)
 	i = 0;
 	while (i < (size / 3))
 	{
-		// if (ft_opti_pb(a, sortint[max], sortint[min], size) == 1)
-		// 	ft_rra(a);
-		// else if (ft_opti_pb(a, sortint[max], sortint[min], size) == 2)
-		// 	ft_ra(a);
-		if (a->first_stack->nb > sortint[max] || a->first_stack->nb < sortint[min])
+		if (a->first_stack->nb > sortint[max]
+			|| a->first_stack->nb < sortint[min])
 			ft_ra(a);
-		if (a->first_stack->nb <= sortint[max]
+		else if (a->first_stack->nb <= sortint[max]
 			&& a->first_stack->nb >= sortint[min])
 		{
 			ft_pb(a, b);
@@ -75,13 +69,10 @@ void	ft_pb_last_100(t_first *a, t_first *b, int	*sortint, int size)
 	i = 0;
 	while (i < (size / 3))
 	{
-		// if (ft_opti_pb(a, sortint[max], sortint[min], size) == 1)
-		// 	ft_rra(a);
-		// else if (ft_opti_pb(a, sortint[max], sortint[min], size) == 2)
-		// 	ft_ra(a);
-		if (a->first_stack->nb > sortint[max] || a->first_stack->nb < sortint[min])
-			ft_ra(a);
-		if (a->first_stack->nb <= sortint[max]
+		if (a->first_stack->nb > sortint[max]
+			|| a->first_stack->nb < sortint[min])
+			ft_rra(a);
+		else if (a->first_stack->nb <= sortint[max]
 			&& a->first_stack->nb >= sortint[min])
 		{
 			ft_pb(a, b);
@@ -96,6 +87,7 @@ void	ft_pb_rest_100(t_first *a, t_first *b, int	*sortint, int size)
 	int	rest;
 	int	i;
 
+	ft_min_to_top_rra(a, sortint[size - ((size / 3) * 3)]);
 	if (size % 3 == 0)
 		return ;
 	tier = size / 3;

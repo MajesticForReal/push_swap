@@ -6,7 +6,7 @@
 /*   By: anrechai <anrechai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 19:10:13 by anrechai          #+#    #+#             */
-/*   Updated: 2022/05/24 19:43:00 by anrechai         ###   ########.fr       */
+/*   Updated: 2022/05/28 00:42:43 by anrechai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_check_argv(int argc, char **argv)
 	{
 		if (argv[i][0] == '\0')
 		{
-			ft_putstr("Error\n");
+			ft_putstr_error("Error\n");
 			return (0);
 		}
 		i++;
@@ -60,7 +60,7 @@ int	ft_check_only_space(int argc, char **argv)
 		}
 		if (k == j)
 		{
-			ft_putstr("Error\n");
+			ft_putstr_error("Error\n");
 			return (0);
 		}
 		i++;
@@ -69,7 +69,6 @@ int	ft_check_only_space(int argc, char **argv)
 	}
 	return (1);
 }
-
 
 int	ft_parsing(char **tab, long long int *res, int i, int j)
 {
@@ -81,7 +80,7 @@ int	ft_parsing(char **tab, long long int *res, int i, int j)
 		{
 			ft_free(tab);
 			free(res);
-			ft_putstr("Error\n");
+			ft_putstr_error("Error\n");
 			return (0);
 		}
 		i++;
